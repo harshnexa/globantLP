@@ -1,0 +1,2968 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agentic Banking for the GCC | Globant Finance Studio</title>
+  <meta name="description"
+    content="The shift from digital to AI at the core of GCC banking. Globant's Finance Studio builds agentic operating models in production, delivered by AI Pods." />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P693QHBB');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="icon" href="https://statics.globant.com/production/public/Fav-icon_Globant_8_2.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* ---------- Tokens ---------- */
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    .gb-lp-root {
+      --navy: #121212;
+      --navy-2: #063238;
+      --navy-3: #0E474E;
+      --lime: #BFD732;
+      --lime-ink: #BFD732;
+      --turq: #38EFA0;
+      --mint: #63E3CF;
+      --magenta: #E61587;
+      --purple: #662D91;
+      --paper: #FFFFFF;
+      --mist: #F5F6F7;
+      --mist-2: #EEF3F1;
+      --ink: #121212;
+      --muted: #121212;
+      --muted-2: #5E7376;
+      --line: #7ff69c;
+      --line-2: #D7E0E0;
+
+      --grad: linear-gradient(100deg, var(--turq), var(--mint));
+      --grad-3: linear-gradient(100deg, var(--lime), var(--turq) 60%, var(--mint));
+
+      --maxw: 1260px;
+      --gut: clamp(22px, 5.2vw, 76px);
+      --sec: clamp(60px, 7.5vw, 108px);
+      --r: 20px;
+      --r-s: 13px;
+      --ease: cubic-bezier(.22, .61, .36, 1);
+
+      --head: "Heebo", sans-serif;
+
+      font-family: "Heebo", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      font-size: 15.5px;
+    }
+
+    .gb-lp-root *,
+    .gb-lp-root *::before,
+    .gb-lp-root *::after {
+      box-sizing: border-box;
+    }
+
+    .gb-lp-case-photo {
+      margin-bottom: 20px;
+    }
+
+    .gb-lp-root h1,
+    .gb-lp-root h2,
+    .gb-lp-root h3,
+    .gb-lp-root h4,
+    .gb-lp-root p,
+    .gb-lp-root ul,
+    .gb-lp-root li,
+    .gb-lp-root figure {
+      margin: 0;
+      padding: 0;
+    }
+
+    .gb-lp-root ul {
+      list-style: none;
+    }
+
+    .gb-lp-root em,
+    .gb-lp-root i {
+      font-style: normal;
+    }
+
+    .gb-lp-root img,
+    .gb-lp-root svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .gb-lp-root a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .gb-lp-root :focus-visible {
+      outline: 3px solid var(--lime);
+      outline-offset: 3px;
+      border-radius: 5px;
+    }
+
+    /* ---------- Type ---------- */
+    .gb-lp-display {
+      font-family: var(--head);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -.02em;
+      color: var(--ink);
+    }
+
+    .gb-lp-h1 {
+      font-size: clamp(2.2rem, 5.1vw, 4.4rem);
+    }
+
+    .gb-lp-h2 {
+      font-family: var(--head);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -.018em;
+      font-size: clamp(1.75rem, 3.9vw, 3.1rem);
+      color: var(--ink);
+      margin-bottom: clamp(1rem, 1.8vw, 1.5rem);
+    }
+
+    .gb-lp-h3 {
+      font-family: var(--head);
+      font-weight: 700;
+      line-height: 1.16;
+      letter-spacing: -.006em;
+      font-size: clamp(1.18rem, 1.7vw, 1.42rem);
+    }
+
+    .gb-lp-lead {
+      font-size: clamp(1rem, 1.3vw, 1.18rem);
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .gb-lp-hl {
+      color: var(--navy);
+      position: relative;
+    }
+
+    .gb-lp-hl::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -.24em;
+      height: .14em;
+      background: var(--lime);
+      opacity: .55;
+      z-index: -1;
+      border-radius: 2px;
+    }
+
+    .gb-lp-kicker {
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      gap: .7em;
+    }
+
+    .gb-lp-kicker .gb-lp-ar {
+      width: .85em;
+      height: .92em;
+      color: var(--lime);
+    }
+
+    /* ---------- Layout primitives ---------- */
+    .gb-lp-section {
+      padding-block: var(--sec);
+      position: relative;
+    }
+
+    .gb-lp-wrap {
+      width: 100%;
+      max-width: var(--maxw);
+      margin-inline: auto;
+      padding-inline: var(--gut);
+    }
+
+    .gb-lp-mist {
+      background: var(--mist);
+    }
+
+    .gb-lp-tint {
+      background: linear-gradient(180deg, #fbfdfc 0%, var(--mist-2) 100%);
+      border-block: 1px solid var(--line);
+    }
+
+    /* ---------- Arrow symbol (the real Globant mark) ---------- */
+    .gb-lp-ar {
+      display: inline-block;
+      fill: currentColor;
+      width: 1em;
+      height: 1em;
+    }
+
+    /* ---------- Buttons ---------- */
+    .gb-lp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45em;
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .94rem;
+      padding: .92em 1.5em;
+      border-radius: 999px;
+      cursor: pointer;
+      border: 0;
+      transition: transform .2s var(--ease), box-shadow .28s var(--ease), background .2s;
+    }
+
+    .gb-lp-btn .gb-lp-ar {
+      width: .6em;
+      height: .86em;
+      transition: transform .25s var(--ease);
+    }
+
+    .gb-lp-btn:hover .gb-lp-ar {
+      transform: translateX(3px);
+    }
+
+    .gb-lp-btn-primary {
+      background: linear-gradient(90deg, #d9e021 0, #8cc63f 100%) 0 0 no-repeat padding-box;
+      border-radius: .8rem;
+      color: var(--navy);
+      box-shadow: 0 14px 30px -14px rgba(191, 215, 50, .95);
+    }
+
+    .gb-lp-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 38px -14px rgba(191, 215, 50, 1);
+    }
+
+    .gb-lp-btn-ghost {
+      background: transparent;
+      color: var(--navy);
+      box-shadow: inset 0 0 0 1.6px rgba(0, 41, 46, .2);
+    }
+
+    .gb-lp-btn-ghost:hover {
+      box-shadow: inset 0 0 0 1.6px var(--navy);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- Scroll progress (top) ---------- */
+    .gb-lp-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      background: var(--grad-3);
+      z-index: 80;
+    }
+
+    /* ---------- Nav ---------- */
+    .gb-lp-nav {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(255, 255, 255, .82);
+      backdrop-filter: saturate(150%) blur(14px);
+      -webkit-backdrop-filter: saturate(150%) blur(14px);
+      border-bottom: 1px solid var(--line);
+      will-change: transform;
+      transition: transform .4s var(--ease), background .3s;
+    }
+
+    .gb-lp-nav.gb-lp-hide {
+      transform: translateY(-101%);
+    }
+
+    .gb-lp-nav-in {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      height: 70px;
+      transition: height .35s var(--ease);
+    }
+
+    .gb-lp-nav.gb-lp-shrink .gb-lp-nav-in {
+      height: 58px;
+    }
+
+    .gb-lp-nav-logo {
+      height: 46px;
+      width: auto;
+    }
+
+    .gb-lp-nav-r {
+      display: flex;
+      align-items: center;
+      gap: 1.7rem;
+    }
+
+    .gb-lp-nav-links {
+      display: flex;
+      gap: 1.6rem;
+    }
+
+    .gb-lp-nav-links a {
+      font-size: .95rem;
+      color: var(--muted);
+      font-weight: 600;
+      transition: color .15s;
+    }
+
+    .gb-lp-nav-links a:hover {
+      color: var(--navy);
+    }
+
+    .gb-lp-nav .gb-lp-btn {
+      padding: .6em 1.15em;
+      font-size: .9rem;
+    }
+
+    @media (max-width:980px) {
+      .gb-lp-nav-links {
+        display: none;
+      }
+    }
+
+    /* =========================================================
+      §1 HERO  (copy + stats left, single lead form right)
+      ========================================================= */
+    .gb-lp-hero {
+      position: relative;
+      overflow: hidden;
+      padding-top: clamp(36px, 4.5vw, 64px);
+      padding-bottom: clamp(54px, 7vw, 96px);
+    }
+
+    .gb-lp-hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      gap: clamp(28px, 4vw, 64px);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gb-lp-shift {
+      display: inline-flex;
+      align-items: center;
+      gap: .85rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .gb-lp-shift b {
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .76rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .gb-lp-shift .gb-lp-from {
+      color: var(--muted-2);
+    }
+
+    .gb-lp-shift .gb-lp-rail {
+      position: relative;
+      width: 50px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--line-2), var(--lime));
+      border-radius: 2px;
+    }
+
+    .gb-lp-shift .gb-lp-rail .gb-lp-ar {
+      position: absolute;
+      right: -2px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 11px;
+      height: 12px;
+      color: var(--lime);
+    }
+
+    .gb-lp-shift .gb-lp-to {
+      color: var(--navy);
+    }
+
+    .gb-lp-ln {
+      display: block;
+      overflow: hidden;
+      padding-bottom: .34em;
+      margin-bottom: -.34em;
+    }
+
+    .gb-lp-ln>span {
+      display: block;
+    }
+
+    .gb-lp-hero-copy .gb-lp-hero-lead {
+      margin-top: clamp(1.9rem, 2.8vw, 2.6rem);
+      max-width: 46ch;
+      font-size: clamp(.9rem, 1vw, 1rem);
+      line-height: 1.6;
+    }
+
+    .gb-lp-trust {
+      margin-top: 2.2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      gap: clamp(18px, 3vw, 40px);
+      flex-wrap: wrap;
+    }
+
+    .gb-lp-trust .gb-lp-n {
+      font-family: var(--head);
+      font-weight: 800;
+      font-size: 1.85rem;
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: var(--navy);
+    }
+
+    .gb-lp-trust .gb-lp-n em {
+      font-style: normal;
+      color: var(--navy);
+    }
+
+    .gb-lp-trust .gb-lp-l {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: .45rem;
+      max-width: 16ch;
+    }
+
+    .gb-lp-trust-src {
+      margin-top: 1.1rem;
+      font-size: .72rem;
+      color: var(--muted-2);
+      flex-basis: 100%;
+    }
+
+    /* hero lead form (the single CTA on the whole page) */
+    .gb-lp-heroform {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      box-shadow: 0 34px 70px -38px rgba(0, 41, 46, .42);
+      padding: clamp(24px, 2.4vw, 32px);
+      position: relative;
+    }
+
+    .gb-lp-heroform h2 {
+      font-family: var(--head);
+      font-weight: 800;
+      font-size: 1.3rem;
+      line-height: 1.15;
+      color: var(--navy);
+    }
+
+    .gb-lp-heroform .gb-lp-fsub {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-top: .4rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .gb-lp-field {
+      margin-bottom: .85rem;
+    }
+
+    .gb-lp-field label {
+      display: block;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      margin-bottom: .35rem;
+    }
+
+    .gb-lp-field input,
+    .gb-lp-field select {
+      width: 100%;
+      font: inherit;
+      font-size: .95rem;
+      color: var(--navy);
+      background: var(--mist);
+      border: 1px solid var(--line-2);
+      border-radius: 11px;
+      padding: .74em .9em;
+      transition: border-color .18s, background .18s, box-shadow .18s;
+    }
+
+    .gb-lp-field input:focus,
+    .gb-lp-field select:focus {
+      outline: 0;
+      border-color: var(--turq);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(56, 239, 160, .18);
+    }
+
+    .gb-lp-field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .7rem;
+    }
+
+    .gb-lp-heroform .gb-lp-btn-primary {
+      width: 100%;
+      margin-top: .5rem;
+      font-size: 1rem;
+      padding: 1em 1.5em;
+    }
+
+    .gb-lp-heroform .gb-lp-fnote {
+      margin-top: .9rem;
+      font-size: .74rem;
+      color: var(--muted-2);
+      line-height: 1.5;
+    }
+
+    /* faint brand watermark behind hero */
+    .gb-lp-hero-wm {
+      position: absolute;
+      right: -5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52%;
+      max-width: 680px;
+      aspect-ratio: 74/108;
+      color: var(--mist);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @media (max-width:940px) {
+      .gb-lp-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .gb-lp-hero-wm {
+        display: none;
+      }
+    }
+
+    /* =========================================================
+      §1b THE SHIFT - light feature beat
+      ========================================================= */
+    .gb-lp-beat .gb-lp-wrap {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gb-lp-beat-line {
+      font-family: var(--head);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      font-size: clamp(1.65rem, 3.7vw, 3rem);
+      max-width: 24ch;
+      margin-inline: auto;
+      color: var(--navy);
+    }
+
+    .gb-lp-beat-line .gb-lp-dim {
+      color: var(--muted);
+    }
+
+    .gb-lp-beat-sub {
+      margin-top: 1.3rem;
+      max-width: 64ch;
+      margin-inline: auto;
+      color: var(--muted);
+      font-size: clamp(.95rem, 1.2vw, 1.08rem);
+    }
+
+    .gb-lp-beat-rail {
+      margin-top: clamp(32px, 4.2vw, 52px);
+      position: relative;
+      height: 54px;
+      width: 100%;
+      max-width: 880px;
+      display: flex;
+      align-items: center;
+    }
+
+    .gb-lp-beat-rail .gb-lp-bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(50% - 1px);
+      height: 2px;
+      background: var(--line-2);
+    }
+
+    .gb-lp-beat-rail .gb-lp-fill {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(50% - 1px);
+      height: 2px;
+      transform-origin: 0 50%;
+      background: linear-gradient(90deg, var(--turq), var(--lime));
+    }
+
+    .gb-lp-beat-rail .gb-lp-tag {
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .74rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      background: var(--mist);
+      padding-right: .9em;
+      position: relative;
+      z-index: 2;
+      color: var(--muted-2);
+    }
+
+    .gb-lp-beat-rail .gb-lp-tag.gb-lp-end {
+      margin-left: auto;
+      padding-right: 0;
+      padding-left: .9em;
+      color: var(--lime-ink);
+    }
+
+    /* =========================================================
+      §2 PILLARS
+      ========================================================= */
+    .gb-lp-pillars-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(20px, 4vw, 56px);
+      align-items: end;
+      margin-bottom: clamp(36px, 4.6vw, 60px);
+    }
+
+    .gb-lp-pillars-head p {
+      color: var(--muted);
+    }
+
+    .gb-lp-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(16px, 1.8vw, 24px);
+    }
+
+    .gb-lp-pcard {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: clamp(26px, 2.6vw, 36px);
+      position: relative;
+      overflow: hidden;
+      transition: transform .35s var(--ease), box-shadow .4s var(--ease), border-color .4s;
+    }
+
+    .gb-lp-pcard:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px -30px rgba(0, 41, 46, .28);
+      border-color: transparent;
+    }
+
+    .gb-lp-pcard .gb-lp-pnum {
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .82rem;
+      letter-spacing: .04em;
+      color: var(--lime-ink);
+      display: inline-flex;
+      align-items: center;
+      gap: .5em;
+      margin-bottom: 1.1rem;
+    }
+
+    .gb-lp-pcard .gb-lp-pnum .gb-lp-ar {
+      width: .8em;
+      height: .9em;
+      color: var(--lime);
+    }
+
+    .gb-lp-pcard .gb-lp-pico {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(56, 239, 160, .16), rgba(99, 227, 207, .14));
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.3rem;
+    }
+
+    .gb-lp-pcard .gb-lp-pico svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .gb-lp-pcard h3 {
+      margin-bottom: .65rem;
+    }
+
+    .gb-lp-pcard p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .gb-lp-pcard::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 3px;
+      background: var(--grad-3);
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition: transform .45s var(--ease);
+    }
+
+    .gb-lp-pcard:hover::after {
+      transform: scaleX(1);
+    }
+
+    @media (max-width:880px) {
+      .gb-lp-pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .gb-lp-pillars-head {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================================
+      §3 WEALTH
+      ========================================================= */
+    .gb-lp-wealth-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: clamp(34px, 5vw, 80px);
+      align-items: start;
+    }
+
+    .gb-lp-wealth-grid p {
+      color: var(--muted);
+      margin-top: 1.2rem;
+    }
+
+    .gb-lp-wealth-grid p strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .gb-lp-flow {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: clamp(24px, 3vw, 36px);
+      box-shadow: 0 24px 50px -34px rgba(0, 41, 46, .26);
+    }
+
+    .gb-lp-flow h4 {
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .74rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      margin-bottom: 1.05rem;
+    }
+
+    .gb-lp-segs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .gb-lp-segs span {
+      font-family: var(--head);
+      font-weight: 600;
+      font-size: .86rem;
+      color: var(--navy);
+      background: var(--mist);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: .72em .9em;
+      text-align: center;
+    }
+
+    .gb-lp-track {
+      position: relative;
+      margin-top: .2rem;
+    }
+
+    .gb-lp-track-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: .9rem;
+      padding: .5rem 0;
+    }
+
+    .gb-lp-track-step:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      left: 13px;
+      top: 32px;
+      bottom: -4px;
+      width: 2px;
+      background: linear-gradient(var(--turq), var(--mint));
+      z-index: 0;
+    }
+
+    .gb-lp-track-step:nth-last-child(2)::before {
+      background: linear-gradient(var(--mint), var(--lime));
+    }
+
+    .gb-lp-node {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(56, 239, 160, .16);
+      display: grid;
+      place-items: center;
+      color: var(--turq);
+      position: relative;
+      z-index: 1;
+    }
+
+    .gb-lp-node .gb-lp-ar {
+      width: 12px;
+      height: 13px;
+    }
+
+    .gb-lp-track-step--human .gb-lp-node {
+      background: var(--lime);
+      color: var(--navy);
+    }
+
+    .gb-lp-track-step b {
+      font-family: var(--head);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: .98rem;
+      display: flex;
+      align-items: center;
+      gap: .55em;
+      flex-wrap: wrap;
+    }
+
+    .gb-lp-track-step small {
+      display: block;
+      color: var(--muted);
+      font-size: .84rem;
+      margin-top: .12rem;
+    }
+
+    .gb-lp-human-tag {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--lime-ink);
+      background: rgba(191, 215, 50, .2);
+      border-radius: 999px;
+      padding: .24em .62em;
+    }
+
+    @media (max-width:880px) {
+      .gb-lp-wealth-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================================
+      §4 PROOF
+      ========================================================= */
+    .gb-lp-proof-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(24px, 4vw, 60px);
+      align-items: end;
+    }
+
+    .gb-lp-proof-head p {
+      color: var(--muted);
+    }
+
+    .gb-lp-proof-line {
+      margin-top: clamp(30px, 3.6vw, 46px);
+      font-family: var(--head);
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .gb-lp-logos-l {
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      margin: clamp(34px, 4vw, 52px) 0 1.3rem;
+    }
+
+    .gb-lp-logos {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: clamp(14px, 2vw, 26px);
+    }
+
+    .gb-lp-logos img {
+      height: clamp(30px, 3.3vw, 44px);
+      width: auto;
+      opacity: .78;
+      transition: opacity .25s, transform .25s;
+    }
+
+    .gb-lp-logos img[alt="Santander"],
+    .gb-lp-logos img[alt="Finastra"] {
+      height: clamp(18px, 2.1vw, 27px);
+    }
+
+    .gb-lp-logos a:hover img {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    .gb-lp-logos .gb-lp-sep {
+      width: 1px;
+      height: 40px;
+      background: var(--line-2);
+      flex: 0 0 auto;
+    }
+
+    .gb-lp-logos-note {
+      margin-top: 7rem;
+      font-size: .78rem;
+      color: var(--muted-2);
+    }
+
+    /* partnerships that matter */
+    .gb-lp-partners {
+      margin-top: clamp(40px, 5vw, 68px);
+      text-align: center;
+    }
+
+    .gb-lp-partners-h {
+      font-family: var(--head);
+      font-weight: 800;
+      letter-spacing: -.018em;
+      line-height: 1.1;
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      color: var(--navy);
+    }
+
+    .gb-lp-partners .gb-lp-partners-sub {
+      margin-top: .9rem;
+      color: var(--muted);
+      font-size: clamp(.95rem, 1.1vw, 1.05rem);
+    }
+
+    .gb-lp-partner-slider {
+      margin-top: clamp(30px, 3.6vw, 48px);
+      margin-left: calc(50% - 50vw);
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    }
+
+    .gb-lp-partner-track {
+      display: flex;
+      align-items: center;
+      gap: clamp(40px, 5vw, 72px);
+      width: max-content;
+      animation: gb-slide 28s linear infinite;
+    }
+
+    .gb-lp-partner-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes gb-slide {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .gb-lp-partner-track img {
+      height: clamp(28px, 3.5vw, 44px);
+      width: auto;
+      opacity: .55;
+      filter: grayscale(1);
+      transition: opacity .25s, filter .25s, transform .25s;
+      flex-shrink: 0;
+    }
+
+    .gb-lp-partner-track img:hover {
+      opacity: 1;
+      filter: grayscale(0);
+      transform: translateY(-2px);
+    }
+
+    .gb-lp-partners .gb-lp-partners-note {
+      margin-top: clamp(28px, 3vw, 44px);
+      font-size: .76rem;
+      color: var(--muted-2);
+      text-align: center;
+    }
+
+    @media (max-width:860px) {
+      .gb-lp-logos {
+        flex-wrap: wrap;
+        gap: clamp(20px, 5vw, 34px);
+      }
+
+      .gb-lp-logos-note {
+        margin-top: 4.5rem;
+      }
+    }
+
+    @media (max-width:760px) {
+      .gb-lp-proof-head {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================================
+      §5 AI PODS
+      ========================================================= */
+    .gb-lp-pods-grid {
+      display: grid;
+      grid-template-columns: .98fr 1.02fr;
+      gap: clamp(34px, 5vw, 80px);
+      align-items: center;
+    }
+
+    .gb-lp-pods-grid p {
+      color: var(--muted);
+      margin-top: 1.2rem;
+    }
+
+    .gb-lp-pods-grid p strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .gb-lp-pods-tag {
+      margin-top: 1.6rem;
+      font-family: var(--head);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.02rem;
+      display: flex;
+      align-items: center;
+      gap: .55em;
+      flex-wrap: wrap;
+    }
+
+    .gb-lp-pods-tag .gb-lp-ar {
+      width: .8em;
+      height: .9em;
+      color: var(--lime);
+    }
+
+    .gb-lp-pods-tag span {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .gb-lp-pod {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: clamp(26px, 3vw, 38px);
+      box-shadow: 0 24px 50px -34px rgba(0, 41, 46, .26);
+    }
+
+    .gb-lp-pod h4 {
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .74rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 1.1rem;
+    }
+
+    .gb-lp-builtfor {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .gb-lp-builtfor span {
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .84rem;
+      color: var(--navy);
+      border: 1px solid #121212;
+      border-radius: 999px;
+      padding: .5em 1em;
+    }
+
+    .gb-lp-powered {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .gb-lp-prole {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      background: var(--mist);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .85em 1em;
+      font-family: var(--head);
+      font-weight: 600;
+      font-size: .88rem;
+      color: var(--navy);
+    }
+
+    .gb-lp-prole svg {
+      width: 20px;
+      height: 20px;
+      flex: none;
+    }
+
+    .gb-lp-pod-core {
+      margin-top: 14px;
+      text-align: center;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      padding: 1.05em;
+      font-family: var(--head);
+      font-weight: 600;
+      font-size: .92rem;
+      line-height: 1.5;
+    }
+
+    .gb-lp-pod-core span {
+      color: var(--turq);
+    }
+
+    @media (max-width:880px) {
+      .gb-lp-pods-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================================
+      §6 USE CASES (embedded success stories)
+      ========================================================= */
+    .gb-lp-cases-head {
+      max-width: 60ch;
+      margin-bottom: clamp(34px, 4.4vw, 58px);
+    }
+
+    .gb-lp-cases-head p {
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    .gb-lp-cases {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(18px, 2vw, 26px);
+    }
+
+    .gb-lp-case {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: clamp(26px, 2.8vw, 38px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gb-lp-case-eyebrow {
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      gap: .5em;
+      margin-bottom: .9rem;
+    }
+
+    .gb-lp-case-eyebrow .gb-lp-ar {
+      width: .8em;
+      height: .9em;
+      color: var(--lime);
+    }
+
+    .gb-lp-case h3 {
+      margin-bottom: 1.5rem;
+    }
+
+    /* metric header: results at a glance */
+    /* uniform metrics: consistent 3-column grid across both cards, navy figure + brand-lime accent underline, top-aligned so wrapping labels never push a number out of line */
+    .gb-lp-case-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+      gap: 1.5rem 1.3rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.6rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gb-lp-metric {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .gb-lp-metric .gb-lp-mn {
+      display: inline-block;
+      font-family: var(--head);
+      font-weight: 800;
+      letter-spacing: -.025em;
+      line-height: 1;
+      color: var(--navy);
+      font-size: clamp(1.55rem, 2.3vw, 2rem);
+      white-space: nowrap;
+      padding-bottom: .18em;
+      border-bottom: 3px solid var(--lime);
+    }
+
+    .gb-lp-metric .gb-lp-mn em {
+      color: var(--navy);
+    }
+
+    .gb-lp-metric .gb-lp-mn span,
+    .gb-lp-metric .gb-lp-mn .gb-lp-pct {
+      font-size: .5em;
+      color: var(--muted-2);
+      margin-left: .12em;
+      font-weight: 700;
+    }
+
+    .gb-lp-metric .gb-lp-ml {
+      font-family: var(--head);
+      font-weight: 600;
+      color: var(--muted);
+      font-size: .8rem;
+      margin-top: .7rem;
+      line-height: 1.32;
+    }
+
+    /* story: challenge -> approach -> outcome as one connected rail */
+    .gb-lp-case-story {
+      position: relative;
+    }
+
+    .gb-lp-case-story::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 9px;
+      bottom: 11px;
+      width: 2px;
+      background: var(--line-2);
+    }
+
+    .gb-lp-step {
+      position: relative;
+      padding: 0 0 1.1rem 1.7rem;
+    }
+
+    .gb-lp-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .gb-lp-step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .18rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2.5px solid var(--turq);
+      box-sizing: border-box;
+    }
+
+    .gb-lp-step--out::before {
+      border-color: var(--lime);
+      background: var(--lime);
+    }
+
+    .gb-lp-step-k {
+      display: block;
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      margin-bottom: .5rem;
+    }
+
+    .gb-lp-step--out .gb-lp-step-k {
+      color: var(--lime-ink);
+    }
+
+    .gb-lp-case p {
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .gb-lp-case-agents {
+      display: grid;
+      gap: .5rem;
+      margin-top: .4rem;
+    }
+
+    .gb-lp-case-agents li {
+      display: flex;
+      gap: .6rem;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .gb-lp-case-agents li .gb-lp-ar {
+      width: .78em;
+      height: .9em;
+      color: var(--turq);
+      flex: none;
+      margin-top: .45em;
+    }
+
+    .gb-lp-case-agents li b {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .gb-lp-case-agents {
+      margin-top: .5rem;
+    }
+
+    .gb-lp-case-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .gb-lp-case-chips span {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--navy);
+      background: linear-gradient(135deg, rgba(191, 215, 50, .18), rgba(56, 239, 160, .14));
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: .5em .85em;
+    }
+
+    .gb-lp-cases-fine {
+      margin-top: 2rem;
+      font-size: .78rem;
+      color: var(--muted-2);
+    }
+
+    @media (max-width:880px) {
+      .gb-lp-cases {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width:420px) {
+      .gb-lp-case-metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* =========================================================
+      §7 CLOSING CTA (slim) + FOOTER
+      ========================================================= */
+    .gb-lp-cta {
+      text-align: center;
+      max-width: 52ch;
+      margin-inline: auto;
+    }
+
+    .gb-lp-cta h2 {
+      font-size: clamp(1.85rem, 4.1vw, 3rem);
+    }
+
+    .gb-lp-cta p {
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    .gb-lp-cta .gb-lp-btn-primary {
+      margin-top: 1.9rem;
+      font-size: 1.06rem;
+      padding: 1.05em 1.95em;
+    }
+
+    body {
+      margin: 0
+    }
+
+    /* dark footer band */
+    .gb-lp-footer {
+      background: #0A0B0D;
+      padding: 42px 0;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .gb-lp-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .gb-lp-foot svg.gb-lp-lg {
+      height: 34px;
+      width: auto;
+      display: block;
+    }
+
+    .gb-lp-copy {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .gb-lp-foot-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .gb-lp-foot-links a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .62);
+      transition: color .25s;
+    }
+
+    .gb-lp-foot-links a:hover {
+      color: #fff;
+    }
+
+    .gb-lp-foot-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .gb-lp-foot-social a {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .12);
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .62);
+      transition: border-color .3s, color .3s, background .3s, transform .18s;
+    }
+
+    .gb-lp-foot-social a:hover {
+      border-color: var(--lime);
+      background: var(--lime);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    .gb-lp-foot-social svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .gb-lp .gb-lp-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s var(--gb-ease), transform .8s var(--gb-ease)
+    }
+
+    .gb-lp .gb-lp-reveal.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .gb-lp .gb-lp-opt-badge {
+      position: fixed;
+      bottom: 18px;
+      left: 18px;
+      z-index: 9998;
+      background: var(--gb-lime);
+      color: var(--gb-ink);
+      font-family: "Heebo", sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 8px 14px;
+      border-radius: 100px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .4)
+    }
+
+    /* ---------- drifting background arrow field (light) ---------- */
+    .gb-lp-floaters {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .gb-lp-fa {
+      position: absolute;
+      height: auto;
+      aspect-ratio: 74/108;
+      color: rgba(0, 41, 46, .045);
+    }
+
+    .gb-lp-fa1 {
+      top: 14%;
+      left: 5%;
+      width: 42px;
+    }
+
+    .gb-lp-fa2 {
+      top: 60%;
+      left: 13%;
+      width: 74px;
+    }
+
+    .gb-lp-fa3 {
+      top: 20%;
+      right: 8%;
+      width: 104px;
+    }
+
+    .gb-lp-fa4 {
+      top: 72%;
+      right: 20%;
+      width: 54px;
+    }
+
+    .gb-lp-cta-sec .gb-lp-wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .gb-lp-root * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* ---------- licensed photography (placed with restraint) ---------- */
+    .gb-lp-imgband {
+      position: relative;
+      width: 100%;
+      height: clamp(220px, 30vw, 360px);
+      overflow: hidden;
+    }
+
+    .gb-lp-imgband img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+       .gb-lp-imgband figcaption {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .gb-lp-imgband figcaption .gb-lp-wrap {
+      padding-block: 0;
+    }
+
+    .gb-lp-imgband figcaption span {
+      font-family: var(--head);
+      font-weight: 800;
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 2rem);
+      letter-spacing: -.012em;
+      max-width: 26ch;
+      margin-inline: auto;
+      display: block;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, .35);
+    }
+
+    .gb-lp-case-photo {
+      position: relative;
+      margin: calc(-1 * clamp(26px, 2.8vw, 38px)) calc(-1 * clamp(26px, 2.8vw, 38px)) 0;
+      margin-bottom: 15px !important;
+      height: 232px;
+      border-radius: var(--r) var(--r) 0 0;
+      overflow: hidden;
+    }
+
+    .gb-lp-case-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 28%;
+    }
+
+    .gb-lp-case {
+      overflow: hidden;
+    }
+
+    .gb-lp-cta-photo::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(rgba(245, 246, 247, .9), rgba(245, 246, 247, .95)), url("hero.jpg") center/cover no-repeat;
+    }
+
+    /* ---------- inline "talk to our experts" CTA row (repeated entry points) ---------- */
+    .gb-lp-inline-cta {
+      margin-top: clamp(30px, 4vw, 48px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem 1.4rem;
+      text-align: center;
+    }
+
+    .gb-lp-inline-cta p {
+      font-family: var(--head);
+      font-weight: 600;
+      color: var(--navy);
+      font-size: clamp(1.02rem, 1.5vw, 1.22rem);
+      margin: 0;
+    }
+
+    /* image band with an action (reuses .gb-lp-imgband) */
+    .gb-lp-imgband--cta figcaption .gb-lp-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1rem, 2vw, 1.5rem);
+      padding-block: 0;
+    }
+
+    .gb-lp-imgband--cta .gb-lp-btn {
+      pointer-events: auto;
+      box-shadow: 0 16px 34px -14px rgba(0, 0, 0, .55);
+    }
+
+    /* wealth section supporting photo */
+    .gb-lp-root .gb-lp-wealth-photo {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      margin: 0 0 clamp(48px, 6vw, 84px);
+      height: clamp(180px, 24vw, 300px);
+      box-shadow: 0 24px 50px -34px rgba(0, 41, 46, .34);
+    }
+
+    .gb-lp-wealth-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    /* AI Pods stat card */
+    .gb-lp-pod-line {
+      font-family: var(--head);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: .98rem;
+      display: flex;
+      align-items: center;
+      gap: .55em;
+      margin-bottom: 1.35rem;
+    }
+
+    .gb-lp-pod-line .gb-lp-ar {
+      width: .8em;
+      height: .9em;
+      color: var(--lime);
+      flex: none;
+    }
+
+    .gb-lp-pod-stats {
+      display: grid;
+      gap: 0;
+    }
+
+    .gb-lp-pod-stat {
+      display: flex;
+      align-items: baseline;
+      gap: .9rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .gb-lp-pod-stat:first-child {
+      border-top: 0;
+    }
+
+    .gb-lp-pod-stat .gb-lp-psn {
+      font-family: var(--head);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      color: var(--navy);
+      font-size: clamp(1.7rem, 2.6vw, 2.15rem);
+      line-height: 1;
+      flex: 0 0 auto;
+      min-width: 3.4em;
+      padding-bottom: .12em;
+      border-bottom: 3px solid var(--lime);
+    }
+
+    .gb-lp-pod-stat .gb-lp-psl b {
+      display: block;
+      font-family: var(--head);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: .94rem;
+    }
+
+    .gb-lp-pod-stat .gb-lp-psl small {
+      display: block;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.4;
+      margin-top: .15rem;
+    }
+
+    .gb-lp-pod-note {
+      margin-top: 1.3rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--line);
+      font-size: .82rem;
+      color: var(--muted-2);
+    }
+
+    .gb-lp-pod-note b {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* success-case footer links */
+    .gb-lp-cases-foot {
+      margin-top: clamp(28px, 3.4vw, 44px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem 1.4rem;
+      text-align: center;
+    }
+
+    .gb-lp-cases-foot .gb-lp-morelink {
+      font-family: var(--head);
+      font-weight: 700;
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      gap: .45em;
+      border-bottom: 2px solid var(--lime);
+      padding-bottom: 2px;
+      transition: color .18s;
+    }
+
+    .gb-lp-cases-foot .gb-lp-morelink:hover {
+      color: var(--lime-ink);
+    }
+
+    .gb-lp-cases-foot .gb-lp-morelink .gb-lp-ar {
+      width: .7em;
+      height: .86em;
+      color: var(--lime);
+    }
+
+    /* ── Pardot iframe in hero form ── */
+    #pardot-iframe {
+      border: none;
+      border-radius: 12px;
+      display: block;
+      height: 550px;
+      opacity: 0;
+      transition: opacity .3s ease;
+      width: 100%;
+    }
+
+    /* ── Modal overlay ── */
+    .modal-overlay {
+      background-color: rgba(0, 41, 46, .9);
+      display: none;
+      height: 100vh;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 1040;
+    }
+
+    .modal-overlay.is-visible {
+      display: block;
+    }
+
+    /* ── Modal ── */
+    .modal {
+      align-items: center;
+      display: none;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      outline: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1050;
+    }
+
+    .modal.is-visible {
+      display: flex;
+    }
+
+    /* ── Thanks ── */
+    .thanks {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      width: 340px;
+    }
+
+    @media(min-width:768px) {
+      .thanks {
+        padding: 60px 80px;
+        width: 560px;
+      }
+    }
+
+    .thanks__icon {
+      margin-bottom: 20px;
+    }
+
+    .thanks__icon svg {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .thanks__title {
+      color: var(--navy);
+      font-family: var(--head);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 32px;
+      margin-bottom: 12px;
+    }
+
+    .thanks__subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 22px;
+      margin-bottom: 28px;
+    }
+
+    .thanks__close--btn {
+      background: var(--lime);
+      border: none;
+      border-radius: 29px;
+      color: var(--navy);
+      cursor: pointer;
+      display: inline-block;
+      font-family: var(--head);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 8px 40px;
+      text-decoration: none;
+    }
+
+    .thanks__close--btn:hover {
+      background: var(--turq);
+      color: var(--navy);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P693QHBB" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ====== BODY-ONLY EMBEDDABLE CONTENT STARTS ====== -->
+  <div class="gb-lp-root" id="gb-lp-top">
+
+    <!-- shared arrow symbol: the real Globant mark -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <symbol id="gb-lp-arrow" viewBox="492 33 74 108">
+        <path
+          d="M500.24,35.53A3.92,3.92,0,0,0,494.51,40L502,51.17a64.82,64.82,0,0,1,0,72.11l-7.48,11.16a3.92,3.92,0,0,0,5.72,4.48l62.71-47.77a4.91,4.91,0,0,0,0-7.82Z" />
+      </symbol>
+    </svg>
+
+    <div class="gb-lp-progress" id="gb-lp-progress" aria-hidden="true"></div>
+
+    <!-- ============ NAV ============ -->
+    <header class="gb-lp-nav">
+      <div class="gb-lp-wrap gb-lp-nav-in">
+        <a href="#gb-lp-top" aria-label="Globant home"><svg class="gb-lp-nav-logo" viewBox="0 0 118 24" fill="none"
+            aria-hidden="true">
+            <path
+              d="M102.703.121C102.555.031 102.384-.01 102.214.002 102.043.015 101.88.081 101.745.191 101.61.302 101.51.453 101.458.624 101.405.795 101.402.979 101.45 1.151L103.084 3.718C104.646 6.169 105.479 9.052 105.479 12.002 105.479 14.952 104.646 17.835 103.084 20.286L101.45 22.85C101.403 23.023 101.406 23.206 101.458 23.377 101.511 23.547 101.611 23.698 101.745 23.808 101.879 23.919 102.042 23.985 102.212 23.998 102.382 24.011 102.552 23.97 102.7 23.881L116.415 12.905C116.547 12.799 116.654 12.663 116.727 12.507 116.801 12.352 116.839 12.18 116.839 12.006 116.839 11.832 116.801 11.66 116.727 11.504 116.654 11.349 116.547 11.213 116.415 11.107L102.703.121Z"
+              fill="#BFD732" />
+            <path
+              d="M9.786 21.789C4.034 21.789.498 16.716.5 11.219.5 5.408 3.659.754 9.731.756 14.19.756 17.633 3.548 17.914 7.491H13.963C13.765 5.653 11.876 4.172 9.731 4.172 6.597 4.172 4.508 6.72 4.502 11.405 4.502 14.637 6.052 18.316 9.693 18.316 13.091 18.316 14.269 16.563 14.269 13.811H10.116V10.521H17.932V13.83C17.939 18.51 16.047 21.791 9.786 21.789Z"
+              fill="#121212" />
+            <path d="M20.198 21.112V1.186H23.868V21.112H20.198Z" fill="#121212" />
+            <path
+              d="M25.609 12.682C25.802 11.039 26.51 9.509 27.621 8.333 28.732 7.158 30.183 6.404 31.746 6.189 36.648 5.731 39.752 8.837 39.75 13.824 39.75 18.449 37.01 21.503 32.693 21.501 27.839 21.501 25.132 17.822 25.609 12.682ZM36.054 13.827C36.054 10.864 34.925 9.409 32.697 9.409 30.469 9.409 29.338 10.861 29.336 13.825 29.334 16.788 30.465 18.273 32.693 18.275 34.921 18.277 36.051 16.787 36.054 13.818V13.827Z"
+              fill="#121212" />
+            <path
+              d="M41.501 21.121V1.193H45.114V8.428C45.56 7.711 46.172 7.125 46.893 6.726 47.615 6.327 48.421 6.128 49.236 6.147 52.821 6.147 54.935 9.263 54.922 13.681 54.922 18.603 52.41 21.507 48.911 21.507 48.139 21.55 47.372 21.371 46.69 20.989 46.009 20.608 45.439 20.037 45.044 19.34L45.016 21.119L41.501 21.121ZM51.211 13.948C51.211 10.96 50.197 9.443 48.052 9.44 46.02 9.44 44.975 11.012 44.975 14.185 44.975 16.646 46.33 18.366 48.078 18.366 49.912 18.364 51.211 16.555 51.211 13.946V13.948Z"
+              fill="#121212" />
+            <path
+              d="M65.803 21.134C65.683 20.709 65.61 20.271 65.585 19.829 65.034 20.401 64.375 20.846 63.651 21.136 62.927 21.427 62.154 21.557 61.38 21.517 58.221 21.517 56.752 19.884 56.752 17.511 56.752 13.3 59.435 12.826 63.131 12.293 64.966 12.028 65.475 11.642 65.475 10.634 65.475 9.685 64.572 9.122 63.133 9.122 62.83 9.074 62.521 9.094 62.225 9.18 61.93 9.265 61.655 9.415 61.418 9.62 61.181 9.824 60.988 10.078 60.85 10.366 60.713 10.653 60.634 10.968 60.62 11.29H57.198C57.256 8.263 58.837 6.159 63.299 6.162 67.701 6.162 69.225 8.23 69.223 11.906V21.134H65.803ZM65.552 13.985C64.852 14.496 64.031 14.793 63.181 14.845 61.092 15.261 60.415 15.883 60.415 17.134 60.415 18.231 61.036 18.763 62.193 18.766 64.082 18.766 65.523 15.593 65.523 15.593L65.552 13.985Z"
+              fill="#121212" />
+            <path
+              d="M80.618 21.139V12.296C80.618 10.042 79.999 9.419 78.247 9.419 76.33 9.419 75.405 10.546 75.405 12.77V21.14H71.728V6.551H75.227V8.685C75.658 7.85 76.313 7.165 77.111 6.716 77.908 6.267 78.813 6.073 79.714 6.158 80.333 6.109 80.954 6.202 81.535 6.429 82.116 6.657 82.642 7.015 83.079 7.477 83.516 7.94 83.851 8.496 84.063 9.108 84.275 9.721 84.358 10.374 84.307 11.023V21.132L80.618 21.139Z"
+              fill="#121212" />
+            <path
+              d="M94.858 15.666C94.777 17.274 94.095 18.184 92.719 18.184 91.223 18.184 90.604 17.116 90.604 15.278V9.285H96.29V6.172H90.618V2.612H86.996V15.661C86.996 18.804 88.603 21.534 92.667 21.537 93.415 21.604 94.169 21.499 94.875 21.23 95.582 20.961 96.224 20.535 96.758 19.98 97.292 19.425 97.705 18.755 97.969 18.016 98.233 17.276 98.341 16.486 98.285 15.699V15.671L94.858 15.666Z"
+              fill="#121212" />
+          </svg></a>
+        <nav class="gb-lp-nav-r" aria-label="Primary">
+          <div class="gb-lp-nav-links">
+            <a href="#gb-lp-shiftbeat">The shift</a>
+            <a href="#gb-lp-pillars">Capabilities</a>
+            <a href="#gb-lp-wealth">Wealth</a>
+            <a href="#gb-lp-pods">AI Pods</a>
+            <a href="#gb-lp-cases">Use cases</a>
+          </div>
+          <a class="gb-lp-btn gb-lp-btn-primary" href="#gb-lp-hero-form">Talk to our Finance Studio<svg class="gb-lp-ar"
+              aria-hidden="true">
+              <use href="#gb-lp-arrow" />
+            </svg></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ §1 HERO ============ -->
+      <section class="gb-lp-section gb-lp-hero" aria-labelledby="gb-lp-hero-h">
+        <svg class="gb-lp-hero-wm gb-lp-ar" aria-hidden="true">
+          <use href="#gb-lp-arrow" />
+        </svg>
+        <div class="gb-lp-wrap gb-lp-hero-grid">
+          <div class="gb-lp-hero-copy">
+            <span class="gb-lp-shift" data-anim="hero">
+              <b class="gb-lp-from">Digital</b>
+              <span class="gb-lp-rail"><svg class="gb-lp-ar" aria-hidden="true">
+                  <use href="#gb-lp-arrow" />
+                </svg></span>
+              <b class="gb-lp-to">Agentic</b>
+            </span>
+
+            <h1 id="gb-lp-hero-h" class="gb-lp-display gb-lp-h1">
+              <span class="gb-lp-ln" data-anim="hero"><span>The shift that</span></span>
+              <span class="gb-lp-ln" data-anim="hero"><span>defines the</span></span>
+              <span class="gb-lp-ln" data-anim="hero"><span>next decade of</span></span>
+              <span class="gb-lp-ln" data-anim="hero"><span class="gb-lp-hl">GCC banking</span></span>
+            </h1>
+
+            <p class="gb-lp-lead gb-lp-hero-lead" data-anim="hero">
+              The retail banking sector is at an inflection point that goes beyond the incremental
+              improvements of the digital transformation era. The Agentic Bank is different. It is built
+              around AI at the core, where agents anticipate intent, act across the operating model, and
+              decide in real time, within the rules your institution defines.
+            </p>
+            <p class="gb-lp-lead gb-lp-hero-lead" data-anim="hero" style="margin-top:1rem">
+              We are helping financial institutions design the architecture, orchestration, and operating
+              model needed to compete in this new environment.
+            </p>
+
+            <div class="gb-lp-trust" data-anim="hero">
+              <div>
+                <div class="gb-lp-n"><em><span class="gb-lp-count" data-to="40">40</span>%</em></div>
+                <div class="gb-lp-l">faster development</div>
+              </div>
+              <div>
+                <div class="gb-lp-n"><em><span class="gb-lp-count" data-to="50">50</span>%</em></div>
+                <div class="gb-lp-l">faster delivery</div>
+              </div>
+              <div>
+                <div class="gb-lp-n"><em><span class="gb-lp-count" data-to="7">7</span>&#215;</em></div>
+                <div class="gb-lp-l">output acceleration</div>
+              </div>
+              <p class="gb-lp-trust-src">Outcomes from Globant AI Pods banking success cases.</p>
+            </div>
+          </div>
+
+          <!-- THE single lead-capture form (hero only) -->
+          <div class="gb-lp-heroform" id="gb-lp-hero-form" data-anim="hero">
+            <h2>Talk to our Finance Studio</h2>
+            <p class="gb-lp-fsub">Tell us your priorities and a GCC finance specialist will reach out.</p>
+            <!-- Globant Pardot form (iframe) -->
+            <iframe id="pardot-iframe" scrolling="no"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ image band ============ -->
+      <figure class="gb-lp-imgband">
+        <img src="banner_img_final_12.jpg"
+          alt="A busy banking team working across financial dashboards" loading="lazy" />
+        <figcaption>
+          <div class="gb-lp-wrap"><span>Building the agentic bank for the GCC.</span></div>
+        </figcaption>
+      </figure>
+
+      <!-- ============ §1b THE SHIFT - light beat ============ -->
+      <section id="gb-lp-shiftbeat" class="gb-lp-section gb-lp-tint gb-lp-beat"
+        aria-label="The shift to agentic banking">
+        <div class="gb-lp-floaters" aria-hidden="true">
+          <svg class="gb-lp-ar gb-lp-fa gb-lp-fa1">
+            <use href="#gb-lp-arrow" />
+          </svg>
+          <svg class="gb-lp-ar gb-lp-fa gb-lp-fa2">
+            <use href="#gb-lp-arrow" />
+          </svg>
+          <svg class="gb-lp-ar gb-lp-fa gb-lp-fa3">
+            <use href="#gb-lp-arrow" />
+          </svg>
+          <svg class="gb-lp-ar gb-lp-fa gb-lp-fa4">
+            <use href="#gb-lp-arrow" />
+          </svg>
+        </div>
+        <div class="gb-lp-wrap">
+          <p class="gb-lp-kicker" data-anim="beat" style="margin-bottom:1.3rem"><svg class="gb-lp-ar"
+              aria-hidden="true">
+              <use href="#gb-lp-arrow" />
+            </svg>The operating model</p>
+          <h2 class="gb-lp-beat-line" data-anim="beat">AI is no longer a feature <span class="gb-lp-dim">inside a
+              digital bank.</span> It is the operating model.</h2>
+          <p class="gb-lp-beat-sub" data-anim="beat">
+            Banks are embedding AI and agentic AI across analytics and decision making, from chatbots and
+            custom GPT solutions to AI-enhanced insights and agentic workflows, supported by orchestration
+            layers that let systems act within defined guardrails.
+          </p>
+          <div class="gb-lp-beat-rail" data-anim="beat">
+            <span class="gb-lp-bar"></span>
+            <span class="gb-lp-fill"></span>
+            <span class="gb-lp-tag">Digital information</span>
+            <span class="gb-lp-tag gb-lp-end">Intelligent, self-running banking</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ §2 PILLARS ============ -->
+      <section id="gb-lp-pillars" class="gb-lp-section" aria-labelledby="gb-lp-pillars-h">
+        <div class="gb-lp-wrap">
+          <div class="gb-lp-pillars-head">
+            <div>
+              <span class="gb-lp-kicker" data-anim="up"><svg class="gb-lp-ar" aria-hidden="true">
+                  <use href="#gb-lp-arrow" />
+                </svg>The three pillars</span>
+              <h2 id="gb-lp-pillars-h" class="gb-lp-h2" data-anim="up" style="margin-top:1rem">What changes when a bank
+                runs on agents</h2>
+            </div>
+            <p data-anim="up">Agentic banking means systems that act within defined guardrails. That is what autonomy
+              makes possible: agents that sense, decide, and act, within human-defined mandates, on real data, at
+              machine speed.</p>
+          </div>
+
+          <div class="gb-lp-pillars">
+            <article class="gb-lp-pcard" data-anim="card">
+              <span class="gb-lp-pnum"><svg class="gb-lp-ar" aria-hidden="true">
+                  <use href="#gb-lp-arrow" />
+                </svg>Pillar 01</span>
+              <div class="gb-lp-pico"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M3 13l4-4 4 3 6-7" stroke="#00292E" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M13 5h4v4" stroke="#00292E" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M3 19h18" stroke="#38EFA0" stroke-width="2" stroke-linecap="round" />
+                </svg></div>
+              <h3 class="gb-lp-h3">Intelligent decisioning at speed</h3>
+              <p>Credit decisions, fraud detection, risk scoring and compliance checks, orchestrated by AI agents acting
+                within defined guardrails. Not rules engines. Not static models. Living systems that learn from every
+                transaction and enforce your policies autonomously, at a scale no manual process can match.</p>
+            </article>
+            <article class="gb-lp-pcard" data-anim="card">
+              <span class="gb-lp-pnum"><svg class="gb-lp-ar" aria-hidden="true">
+                  <use href="#gb-lp-arrow" />
+                </svg>Pillar 02</span>
+              <div class="gb-lp-pico"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="8" r="3.4" stroke="#00292E" stroke-width="2" />
+                  <path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" stroke="#00292E" stroke-width="2" stroke-linecap="round" />
+                  <path d="M18.5 5.5a4 4 0 010 5" stroke="#38EFA0" stroke-width="2" stroke-linecap="round" />
+                </svg></div>
+              <h3 class="gb-lp-h3">Always-on client experience</h3>
+              <p>The Agentic Bank knows what clients need before they ask: the major purchase, the portfolio rebalance,
+                the SME owner who needs a decision by morning. Agents handle the data, the analysis and the first
+                response. Your people handle the relationship and the judgment. The human touch stays. The manual work
+                does not.</p>
+            </article>
+            <article class="gb-lp-pcard" data-anim="card">
+              <span class="gb-lp-pnum"><svg class="gb-lp-ar" aria-hidden="true">
+                  <use href="#gb-lp-arrow" />
+                </svg>Pillar 03</span>
+              <div class="gb-lp-pico"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="6" cy="12" r="2.4" stroke="#00292E" stroke-width="2" />
+                  <circle cx="18" cy="6" r="2.4" stroke="#00292E" stroke-width="2" />
+                  <circle cx="18" cy="18" r="2.4" stroke="#38EFA0" stroke-width="2" />
+                  <path d="M8.1 11l7.8-4M8.1 13l7.8 4" stroke="#00292E" stroke-width="2" stroke-linecap="round" />
+                </svg></div>
+              <h3 class="gb-lp-h3">Open banking and the connected financial ecosystem</h3>
+              <p>The next decade is not built on closed systems. It is built on interoperable platforms that connect
+                regional payment rails, open finance infrastructure, wealth networks and AI decisioning layers at once.
+                CBUAE Open Finance and SAMA Open Banking are not compliance obligations. They are the architecture of a
+                bank that grows without walls.</p>
+            </article>
+          </div>
+
+          <div class="gb-lp-inline-cta" data-anim="up">
+            <p>See how these pillars come together for your institution.</p>
+            <a class="gb-lp-btn gb-lp-btn-primary" href="#gb-lp-hero-form">Talk to our experts<svg class="gb-lp-ar"
+                aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ image band: intelligence in production ============ -->
+      <figure class="gb-lp-imgband gb-lp-imgband--cta">
+        <img src="hacker-using-virtual-reality-headset-to-code-malwa-2025-02-20-03-05-25-utc.jpg"
+          alt="An analyst monitoring live financial dashboards and market data" loading="lazy" />
+        <figcaption>
+          <div class="gb-lp-wrap">
+            <span>Agentic intelligence, running on real data in production.</span>
+            <a class="gb-lp-btn gb-lp-btn-primary" href="#gb-lp-hero-form">Talk to our experts<svg class="gb-lp-ar"
+                aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg></a>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- ============ §3 WEALTH ============ -->
+      <section id="gb-lp-wealth" class="gb-lp-section gb-lp-mist" aria-labelledby="gb-lp-wealth-h">
+        <div class="gb-lp-wrap">
+          <figure class="gb-lp-wealth-photo" data-anim="up">
+            <img src="incrediblesglb_A_high-resolution_image_captures_an_ind.jpg"
+              alt="A wealth advisor reviewing client portfolio insights on a tablet" loading="lazy" />
+          </figure>
+          <div class="gb-lp-wealth-grid">
+            <div>
+              <span class="gb-lp-kicker" data-anim="up"><svg class="gb-lp-ar" aria-hidden="true">
+                  <use href="#gb-lp-arrow" />
+                </svg>Wealth management for the GCC</span>
+              <h2 id="gb-lp-wealth-h" class="gb-lp-h2" data-anim="up"
+                style="margin-top:1rem;font-size:clamp(1.7rem,3.1vw,2.65rem);max-width:17ch">Where agentic AI changes
+                wealth management in the GCC</h2>
+              <p data-anim="up">Wealth management in the GCC is not the same as anywhere else. The client base spans
+                ultra-high-net-worth individuals, sovereign wealth entities, family offices and a fast-growing
+                mass-affluent segment, each needing a different level of personalisation, compliance posture and
+                relationship.</p>
+              <p data-anim="up">Agentic AI makes all of it possible at scale. <strong>Propensity models</strong> that
+                identify the right product at the right moment. <strong>Event-driven triggers</strong> that connect
+                portfolio decisions to real-world signals such as market movements, regulatory changes and life events.
+                And <strong>advisory agents</strong> that surface the insight, so your relationship manager delivers it
+                with the judgement and empathy no system replaces.</p>
+              <a class="gb-lp-btn gb-lp-btn-primary" data-anim="up" href="#gb-lp-hero-form"
+                style="margin-top:1.8rem">Talk to our experts<svg class="gb-lp-ar" aria-hidden="true">
+                  <use href="#gb-lp-arrow" />
+                </svg></a>
+            </div>
+            <div class="gb-lp-flow" data-anim="up" aria-label="How agentic wealth management works in the GCC">
+              <h4>GCC client segments</h4>
+              <div class="gb-lp-segs">
+                <span>Ultra-HNW individuals</span><span>Sovereign wealth</span>
+                <span>Family offices</span><span>Mass-affluent</span>
+              </div>
+              <h4>Agentic flow</h4>
+              <ol class="gb-lp-track">
+                <li class="gb-lp-track-step"><span class="gb-lp-node"><svg class="gb-lp-ar" aria-hidden="true">
+                      <use href="#gb-lp-arrow" />
+                    </svg></span>
+                  <div><b>Propensity models</b><small>Right product, right client, right moment</small></div>
+                </li>
+                <li class="gb-lp-track-step"><span class="gb-lp-node"><svg class="gb-lp-ar" aria-hidden="true">
+                      <use href="#gb-lp-arrow" />
+                    </svg></span>
+                  <div><b>Event-driven triggers</b><small>Market moves, regulatory change, life events</small></div>
+                </li>
+                <li class="gb-lp-track-step"><span class="gb-lp-node"><svg class="gb-lp-ar" aria-hidden="true">
+                      <use href="#gb-lp-arrow" />
+                    </svg></span>
+                  <div><b>Advisory agents</b><small>Surface the insight, ready to act on</small></div>
+                </li>
+                <li class="gb-lp-track-step gb-lp-track-step--human"><span class="gb-lp-node"><svg class="gb-lp-ar"
+                      aria-hidden="true">
+                      <use href="#gb-lp-arrow" />
+                    </svg></span>
+                  <div><b>Relationship manager <span class="gb-lp-human-tag">Human</span></b><small>Delivers with
+                      judgement and empathy</small></div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ §4 PROOF ============ -->
+      <section id="gb-lp-proof" class="gb-lp-section" aria-labelledby="gb-lp-proof-h">
+        <div class="gb-lp-wrap">
+          <div class="gb-lp-proof-head">
+            <div>
+              <span class="gb-lp-kicker" data-anim="up"><svg class="gb-lp-ar" aria-hidden="true">
+                  <use href="#gb-lp-arrow" />
+                </svg>The proof</span>
+              <h2 id="gb-lp-proof-h" class="gb-lp-h2" data-anim="up" style="margin-top:1rem">Built in production. Not
+                promised in a pilot.</h2>
+            </div>
+            <p data-anim="up">Globant's Finance Studio builds agentic operating models in production, at regulated
+              financial institutions, measured against real business outcomes.</p>
+          </div>
+          <p class="gb-lp-proof-line" data-anim="up">Already delivering for banks, retailers, media and more.</p>
+          <div class="gb-lp-partners" data-anim="up">
+            <h3 class="gb-lp-partners-h">Partnerships that matter</h3>
+            <p class="gb-lp-partners-sub">Our ecosystem of partnerships ensures best-in-class capabilities:</p>
+            <div class="gb-lp-partner-slider" aria-label="Technology partners">
+              <div class="gb-lp-partner-track">
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/nvidia-logo.png.webp?itok=nXU5Hqhp"
+                  alt="NVIDIA" loading="lazy" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/open-ai-grey-logo.png.webp?itok=J508DLst"
+                  alt="OpenAI" loading="lazy" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/aws-grey-logo.png.webp?itok=k4rtHtzY"
+                  alt="AWS" loading="lazy" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/azure-grey-logo.png.webp?itok=wnkATAzu"
+                  alt="Microsoft Azure" loading="lazy" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/google-cloud-grey-logo.png.webp?itok=YJY5yAGg"
+                  alt="Google Cloud" loading="lazy" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/salesforce-grey-logo.png.webp?itok=qjaRJqyr"
+                  alt="Salesforce" loading="lazy" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/oracle-grey-logo.png.webp?itok=bhCDsvvk"
+                  alt="Oracle" loading="lazy" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/service-now-grey-logo.png.webp?itok=ezUPzWdh"
+                  alt="ServiceNow" loading="lazy" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/uipath-grey-logo-adjusted.png.webp?itok=J5NmVGij"
+                  alt="UiPath" loading="lazy" />
+                <!-- duplicate set for seamless loop -->
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/nvidia-logo.png.webp?itok=nXU5Hqhp"
+                  alt="" loading="lazy" aria-hidden="true" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/open-ai-grey-logo.png.webp?itok=J508DLst"
+                  alt="" loading="lazy" aria-hidden="true" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/aws-grey-logo.png.webp?itok=k4rtHtzY"
+                  alt="" loading="lazy" aria-hidden="true" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/azure-grey-logo.png.webp?itok=wnkATAzu"
+                  alt="" loading="lazy" aria-hidden="true" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/google-cloud-grey-logo.png.webp?itok=YJY5yAGg"
+                  alt="" loading="lazy" aria-hidden="true" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/salesforce-grey-logo.png.webp?itok=qjaRJqyr"
+                  alt="" loading="lazy" aria-hidden="true" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/oracle-grey-logo.png.webp?itok=bhCDsvvk"
+                  alt="" loading="lazy" aria-hidden="true" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/service-now-grey-logo.png.webp?itok=ezUPzWdh"
+                  alt="" loading="lazy" aria-hidden="true" />
+                <img
+                  src="https://statics.globant.com/com/public/styles/webp/public/2025-10/uipath-grey-logo-adjusted.png.webp?itok=J5NmVGij"
+                  alt="" loading="lazy" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ §5 AI PODS ============ -->
+      <section id="gb-lp-pods" class="gb-lp-section gb-lp-mist" aria-labelledby="gb-lp-pods-h">
+        <div class="gb-lp-wrap gb-lp-pods-grid">
+          <div>
+            <span class="gb-lp-kicker" data-anim="up"><svg class="gb-lp-ar" aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg>How Globant delivers</span>
+            <h2 id="gb-lp-pods-h" class="gb-lp-h2" data-anim="up" style="margin-top:1rem">AI Pods: the delivery model
+              that makes agentic banking real</h2>
+            <p data-anim="up">Agentic banking is the destination. AI Pods are how you get there, redefining the way work
+              gets delivered. <strong>AI-native service units where agents execute, experts supervise, and enterprises
+                receive governed outputs at scale.</strong></p>
+            <p data-anim="up">Each AI Pod combines frontier agentic AI with the deep expertise of Globant's
+              <strong>Financial AI Studio</strong>, creating an agentic workflow that orchestrates solutions end to end
+              at enterprise scale.
+            </p>
+            <p class="gb-lp-pods-tag" data-anim="up"><svg class="gb-lp-ar" aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg>From software as a service <span>to services as software.</span></p>
+            <a class="gb-lp-btn gb-lp-btn-primary" data-anim="up" href="#gb-lp-hero-form" style="margin-top:1.8rem">Talk
+              to our experts<svg class="gb-lp-ar" aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg></a>
+          </div>
+          <div class="gb-lp-pod" data-anim="up" aria-label="AI Pods implementation stats">
+            <h4>AI Pods are built for</h4>
+            <div class="gb-lp-builtfor">
+              <span>Speed</span><span>Scale</span><span>Adaptability</span>
+            </div>
+            <p class="gb-lp-pod-line"><svg class="gb-lp-ar" aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg>Select what you need, deploy instantly.</p>
+            <div class="gb-lp-pod-stats">
+              <div class="gb-lp-pod-stat"><span class="gb-lp-psn">7&#215;</span><span class="gb-lp-psl"><b>Output
+                    acceleration</b><small>Average multiplier vs. traditional delivery teams.</small></span></div>
+              <div class="gb-lp-pod-stat"><span class="gb-lp-psn">20+</span><span
+                  class="gb-lp-psl"><b>Years</b><small>Of industry-specific knowledge.</small></span></div>
+              <div class="gb-lp-pod-stat"><span class="gb-lp-psn">140+</span><span
+                  class="gb-lp-psl"><b>LLMs</b><small>Routed through our interface.</small></span></div>
+            </div>
+            <p class="gb-lp-pod-note">Powered by <b>Globant Enterprise AI</b> and <b>Globant CODA</b>, guided by Globant
+              experts.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ §6 USE CASES ============ -->
+      <section id="gb-lp-cases" class="gb-lp-section" aria-labelledby="gb-lp-cases-h">
+        <div class="gb-lp-wrap">
+          <div class="gb-lp-cases-head">
+            <span class="gb-lp-kicker" data-anim="up"><svg class="gb-lp-ar" aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg>Success cases in banking</span>
+            <h2 id="gb-lp-cases-h" class="gb-lp-h2" data-anim="up" style="margin-top:1rem">Agentic delivery, already in
+              production</h2>
+            <p data-anim="up">Two banks. Two hard deadlines. AI Pods delivered both, pairing Globant's engineers with
+              Agentic AI.</p>
+          </div>
+
+          <div class="gb-lp-cases">
+            <!-- CASE A: Data migration -->
+            <article class="gb-lp-case" data-anim="card">
+              <figure class="gb-lp-case-photo"><img
+                  src="business-team-finance-stock-exchange_BANNER.jpg"
+                  alt="A bank technology team collaborating across trading and analytics screens" loading="lazy"
+                  style="object-position:center 30%"></figure>
+              <span class="gb-lp-case-eyebrow"><svg class="gb-lp-ar" aria-hidden="true">
+                  <use href="#gb-lp-arrow" />
+                </svg>Data migration</span>
+              <h3 class="gb-lp-h3">An Irish bank completed its data migration with Globant</h3>
+              <div class="gb-lp-case-metrics">
+                <div class="gb-lp-metric">
+                  <div class="gb-lp-mn"><em>40</em><span class="gb-lp-pct">%</span></div>
+                  <div class="gb-lp-ml">faster development</div>
+                </div>
+                <div class="gb-lp-metric">
+                  <div class="gb-lp-mn">6<span>months</span></div>
+                  <div class="gb-lp-ml">end to end</div>
+                </div>
+                <div class="gb-lp-metric">
+                  <div class="gb-lp-mn">DORA</div>
+                  <div class="gb-lp-ml">deadline beaten, Mar 2025</div>
+                </div>
+              </div>
+              <div class="gb-lp-case-story">
+                <div class="gb-lp-step">
+                  <span class="gb-lp-step-k">Challenge</span>
+                  <p>A 2013 GWT and Java applet branch application needed a full redesign and a rapid migration to .NET
+                    Core, ahead of the EU Digital Operational Resilience Act (DORA) deadline for banks in March 2025.
+                  </p>
+                </div>
+                <div class="gb-lp-step">
+                  <span class="gb-lp-step-k">Approach</span>
+                  <p>Globant's lean AI Pods subscription model, powered by Globant Enterprise AI, accelerated the
+                    migration through intelligent automation and human orchestration.</p>
+                  <ul class="gb-lp-case-agents">
+                    <li><svg class="gb-lp-ar" aria-hidden="true">
+                        <use href="#gb-lp-arrow" />
+                      </svg><span><b>Code Conversion Agent</b> translated Java to .NET Core.</span></li>
+                    <li><svg class="gb-lp-ar" aria-hidden="true">
+                        <use href="#gb-lp-arrow" />
+                      </svg><span><b>Functional Spec and Code Q&amp;A Agents</b> clarified business logic and the legacy
+                        codebase.</span></li>
+                    <li><svg class="gb-lp-ar" aria-hidden="true">
+                        <use href="#gb-lp-arrow" />
+                      </svg><span><b>User Story and Unit Test Generators</b> kept logic aligned and coverage
+                        high.</span></li>
+                  </ul>
+                </div>
+                <div class="gb-lp-step gb-lp-step--out">
+                  <span class="gb-lp-step-k">Outcome</span>
+                  <div class="gb-lp-case-chips">
+                    <span>40% faster development</span><span>Higher quality with AI-generated tests</span><span>Seamless
+                      integration</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- CASE B: Product definition -->
+            <article class="gb-lp-case" data-anim="card">
+              <figure class="gb-lp-case-photo"><img
+                  src="AI-Analytics monitor.png"
+                  alt="An analyst reviewing data dashboards at a workstation" loading="lazy"></figure>
+              <span class="gb-lp-case-eyebrow"><svg class="gb-lp-ar" aria-hidden="true">
+                  <use href="#gb-lp-arrow" />
+                </svg>Product definition</span>
+              <h3 class="gb-lp-h3">AI Pods reimagined product definition at a global bank</h3>
+              <div class="gb-lp-case-metrics">
+                <div class="gb-lp-metric">
+                  <div class="gb-lp-mn"><em>50</em><span class="gb-lp-pct">%</span></div>
+                  <div class="gb-lp-ml">faster delivery</div>
+                </div>
+                <div class="gb-lp-metric">
+                  <div class="gb-lp-mn">6&#8594;3<span>months</span></div>
+                  <div class="gb-lp-ml">timeline halved</div>
+                </div>
+                <div class="gb-lp-metric">
+                  <div class="gb-lp-mn">10<span>epics</span></div>
+                  <div class="gb-lp-ml">in 1 month, vs 1 in 3 weeks</div>
+                </div>
+              </div>
+              <div class="gb-lp-case-story">
+                <div class="gb-lp-step">
+                  <span class="gb-lp-step-k">Challenge</span>
+                  <p>A leading worldwide bank needed to define an entire business application from scratch: functional
+                    scope, epics, user stories and documentation, on a tight deadline and a constrained budget.
+                    Traditional models stalled at one epic in three weeks.</p>
+                </div>
+                <div class="gb-lp-step">
+                  <span class="gb-lp-step-k">Approach</span>
+                  <p>Globant's AI Pods paired the core team with Agentic AI, powered by Globant Enterprise AI and
+                    Globant CODA.</p>
+                  <ul class="gb-lp-case-agents">
+                    <li><svg class="gb-lp-ar" aria-hidden="true">
+                        <use href="#gb-lp-arrow" />
+                      </svg><span><b>Product Definition Agent</b> turned visioning sessions into user stories in
+                        hours.</span></li>
+                    <li><svg class="gb-lp-ar" aria-hidden="true">
+                        <use href="#gb-lp-arrow" />
+                      </svg><span><b>Documentation Agents</b> generated specs and manuals to strict bank
+                        standards.</span></li>
+                    <li><svg class="gb-lp-ar" aria-hidden="true">
+                        <use href="#gb-lp-arrow" />
+                      </svg><span><b>Human oversight</b> kept it sharp, strategic and high-quality.</span></li>
+                  </ul>
+                </div>
+                <div class="gb-lp-step gb-lp-step--out">
+                  <span class="gb-lp-step-k">Outcome</span>
+                  <div class="gb-lp-case-chips">
+                    <span>50% faster delivery</span><span>Six months to three</span><span>10 epics in one
+                      month</span><span>On budget</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="gb-lp-cases-foot" data-anim="up">
+            <a class="gb-lp-btn gb-lp-btn-primary" href="#gb-lp-hero-form">Talk to our experts<svg class="gb-lp-ar"
+                aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg></a>
+            <a class="gb-lp-morelink" href="https://www.globant.com/our-work/all-stories" target="_blank"
+              rel="noopener">See more success cases on globant.com<svg class="gb-lp-ar" aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ §7 CLOSING CTA ============ -->
+      <section id="gb-lp-contact" class="gb-lp-section gb-lp-tint gb-lp-cta-sec gb-lp-cta-photo"
+        aria-labelledby="gb-lp-cta-h">
+        <div class="gb-lp-floaters" aria-hidden="true">
+          <svg class="gb-lp-ar gb-lp-fa gb-lp-fa1">
+            <use href="#gb-lp-arrow" />
+          </svg>
+          <svg class="gb-lp-ar gb-lp-fa gb-lp-fa2">
+            <use href="#gb-lp-arrow" />
+          </svg>
+          <svg class="gb-lp-ar gb-lp-fa gb-lp-fa3">
+            <use href="#gb-lp-arrow" />
+          </svg>
+          <svg class="gb-lp-ar gb-lp-fa gb-lp-fa4">
+            <use href="#gb-lp-arrow" />
+          </svg>
+        </div>
+        <div class="gb-lp-wrap">
+          <div class="gb-lp-cta">
+            <span class="gb-lp-kicker" data-anim="up" style="justify-content:center;display:flex"><svg class="gb-lp-ar"
+                aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg>Talk to our Finance Studio</span>
+            <h2 id="gb-lp-cta-h" class="gb-lp-h2" data-anim="up" style="margin-top:1rem">Ready to move from digital to
+              agentic?</h2>
+            <p data-anim="up">Our GCC finance specialists are available to discuss your institution's specific
+              priorities.</p>
+            <a class="gb-lp-btn gb-lp-btn-primary" data-anim="up" href="#gb-lp-hero-form">Request a conversation<svg
+                class="gb-lp-ar" aria-hidden="true">
+                <use href="#gb-lp-arrow" />
+              </svg></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER (dark band, matches Page 1) ============ -->
+    <footer class="gb-lp-footer">
+      <div class="gb-lp-wrap gb-lp-foot">
+        <svg class="gb-lp-lg" viewBox="0 0 118 24" fill="none">
+          <path
+            d="M102.703.121C102.555.031 102.384-.01 102.214.002 102.043.015 101.88.081 101.745.191 101.61.302 101.51.453 101.458.624 101.405.795 101.402.979 101.45 1.151L103.084 3.718C104.646 6.169 105.479 9.052 105.479 12.002 105.479 14.952 104.646 17.835 103.084 20.286L101.45 22.85C101.403 23.023 101.406 23.206 101.458 23.377 101.511 23.547 101.611 23.698 101.745 23.808 101.879 23.919 102.042 23.985 102.212 23.998 102.382 24.011 102.552 23.97 102.7 23.881L116.415 12.905C116.547 12.799 116.654 12.663 116.727 12.507 116.801 12.352 116.839 12.18 116.839 12.006 116.839 11.832 116.801 11.66 116.727 11.504 116.654 11.349 116.547 11.213 116.415 11.107L102.703.121Z"
+            fill="#BFD732"></path>
+          <path
+            d="M9.786 21.789C4.034 21.789.498 16.716.5 11.219.5 5.408 3.659.754 9.731.756 14.19.756 17.633 3.548 17.914 7.491H13.963C13.765 5.653 11.876 4.172 9.731 4.172 6.597 4.172 4.508 6.72 4.502 11.405 4.502 14.637 6.052 18.316 9.693 18.316 13.091 18.316 14.269 16.563 14.269 13.811H10.116V10.521H17.932V13.83C17.939 18.51 16.047 21.791 9.786 21.789Z"
+            fill="#fff"></path>
+          <path d="M20.198 21.112V1.186H23.868V21.112H20.198Z" fill="#fff"></path>
+          <path
+            d="M25.609 12.682C25.802 11.039 26.51 9.509 27.621 8.333 28.732 7.158 30.183 6.404 31.746 6.189 36.648 5.731 39.752 8.837 39.75 13.824 39.75 18.449 37.01 21.503 32.693 21.501 27.839 21.501 25.132 17.822 25.609 12.682ZM36.054 13.827C36.054 10.864 34.925 9.409 32.697 9.409 30.469 9.409 29.338 10.861 29.336 13.825 29.334 16.788 30.465 18.273 32.693 18.275 34.921 18.277 36.051 16.787 36.054 13.818V13.827Z"
+            fill="#fff"></path>
+          <path
+            d="M41.501 21.121V1.193H45.114V8.428C45.56 7.711 46.172 7.125 46.893 6.726 47.615 6.327 48.421 6.128 49.236 6.147 52.821 6.147 54.935 9.263 54.922 13.681 54.922 18.603 52.41 21.507 48.911 21.507 48.139 21.55 47.372 21.371 46.69 20.989 46.009 20.608 45.439 20.037 45.044 19.34L45.016 21.119L41.501 21.121ZM51.211 13.948C51.211 10.96 50.197 9.443 48.052 9.44 46.02 9.44 44.975 11.012 44.975 14.185 44.975 16.646 46.33 18.366 48.078 18.366 49.912 18.364 51.211 16.555 51.211 13.946V13.948Z"
+            fill="#fff"></path>
+          <path
+            d="M65.803 21.134C65.683 20.709 65.61 20.271 65.585 19.829 65.034 20.401 64.375 20.846 63.651 21.136 62.927 21.427 62.154 21.557 61.38 21.517 58.221 21.517 56.752 19.884 56.752 17.511 56.752 13.3 59.435 12.826 63.131 12.293 64.966 12.028 65.475 11.642 65.475 10.634 65.475 9.685 64.572 9.122 63.133 9.122 62.83 9.074 62.521 9.094 62.225 9.18 61.93 9.265 61.655 9.415 61.418 9.62 61.181 9.824 60.988 10.078 60.85 10.366 60.713 10.653 60.634 10.968 60.62 11.29H57.198C57.256 8.263 58.837 6.159 63.299 6.162 67.701 6.162 69.225 8.23 69.223 11.906V21.134H65.803ZM65.552 13.985C64.852 14.496 64.031 14.793 63.181 14.845 61.092 15.261 60.415 15.883 60.415 17.134 60.415 18.231 61.036 18.763 62.193 18.766 64.082 18.766 65.523 15.593 65.523 15.593L65.552 13.985Z"
+            fill="#fff"></path>
+          <path
+            d="M80.618 21.139V12.296C80.618 10.042 79.999 9.419 78.247 9.419 76.33 9.419 75.405 10.546 75.405 12.77V21.14H71.728V6.551H75.227V8.685C75.658 7.85 76.313 7.165 77.111 6.716 77.908 6.267 78.813 6.073 79.714 6.158 80.333 6.109 80.954 6.202 81.535 6.429 82.116 6.657 82.642 7.015 83.079 7.477 83.516 7.94 83.851 8.496 84.063 9.108 84.275 9.721 84.358 10.374 84.307 11.023V21.132L80.618 21.139Z"
+            fill="#fff"></path>
+          <path
+            d="M94.858 15.666C94.777 17.274 94.095 18.184 92.719 18.184 91.223 18.184 90.604 17.116 90.604 15.278V9.285H96.29V6.172H90.618V2.612H86.996V15.661C86.996 18.804 88.603 21.534 92.667 21.537 93.415 21.604 94.169 21.499 94.875 21.23 95.582 20.961 96.224 20.535 96.758 19.98 97.292 19.425 97.705 18.755 97.969 18.016 98.233 17.276 98.341 16.486 98.285 15.699V15.671L94.858 15.666Z"
+            fill="#fff"></path>
+        </svg>
+        <div class="gb-lp-copy">All rights reserved Globant 2026</div>
+        <div class="gb-lp-foot-links"><a href="https://www.globant.com/cookie-policy" target="_blank"
+            rel="noopener">Privacy Policy</a><a href="https://www.globant.com/terms-and-conditions" target="_blank"
+            rel="noopener">Terms and Conditions</a><a href="https://www.globant.com/cookie-policy" target="_blank"
+            rel="noopener">Cookie Policy</a>
+          <a href="#" class="cookie-preferences-popup" onclick="UC_UI.showSecondLayer(); return false;">Cookie
+            Preferences</a>
+        </div>
+        <div class="gb-lp-foot-social">
+          <a href="https://www.linkedin.com/company/globant/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg
+              viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z">
+              </path>
+            </svg></a>
+          <a href="https://twitter.com/globant" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path d="M18 2h3l-7 8 8 12h-6l-5-7-5 7H3l8-9L3 2h6l4 6z"></path>
+            </svg></a>
+          <a href="https://www.youtube.com/user/Globant" target="_blank" rel="noopener" aria-label="YouTube"><svg
+              viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23 12s0-3.3-.4-4.9a2.5 2.5 0 00-1.8-1.8C19.2 5 12 5 12 5s-7.2 0-8.8.3A2.5 2.5 0 001.4 7.1C1 8.7 1 12 1 12s0 3.3.4 4.9a2.5 2.5 0 001.8 1.8C4.8 19 12 19 12 19s7.2 0 8.8-.3a2.5 2.5 0 001.8-1.8C23 15.3 23 12 23 12zM10 15V9l5 3z">
+              </path>
+            </svg></a>
+          <a href="https://www.instagram.com/globant/" target="_blank" rel="noopener" aria-label="Instagram"><svg
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
+            </svg></a>
+          <a href="https://www.facebook.com/Globant" target="_blank" rel="noopener" aria-label="Facebook"><svg
+              viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 16.99 22 12z">
+              </path>
+            </svg></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- ====== BODY-ONLY EMBEDDABLE CONTENT ENDS ====== -->
+
+  <!-- GSAP from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script>
+    (function () {
+      var root = document.querySelector(".gb-lp-root");
+      if (!root || !window.gsap) return;                 // no lib -> content already visible
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var gsap = window.gsap;
+      var hasST = !!window.ScrollTrigger;
+      if (hasST) gsap.registerPlugin(ScrollTrigger);
+
+      if (hasST) {
+        gsap.to("#gb-lp-progress", {
+          scaleX: 1, ease: "none",
+          scrollTrigger: { trigger: "body", start: "top top", end: "bottom bottom", scrub: .3 }
+        });
+
+        var nav = document.querySelector('.gb-lp-nav');
+        ScrollTrigger.create({
+          start: 0, end: "max", onUpdate: function (self) {
+            var y = self.scroll();
+            nav.classList.toggle('gb-lp-shrink', y > 40);
+            if (y > 160 && self.direction === 1) nav.classList.add('gb-lp-hide');
+            else nav.classList.remove('gb-lp-hide');
+          }
+        });
+      }
+
+      if (reduce) { return; }  // respect reduced motion
+
+      // ---- Hero load timeline ----
+      var tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      tl.from('.gb-lp-ln > span', { yPercent: 120, duration: 1.0, stagger: .12, ease: "power4.out" }, .05);
+      tl.from('.gb-lp-shift, .gb-lp-hero-lead, .gb-lp-trust',
+        { y: 40, opacity: 0, duration: .9, stagger: .12 }, .25);
+      tl.from('.gb-lp-heroform', { y: 50, opacity: 0, duration: 1.0, ease: "power3.out" }, .3);
+
+      // ---- Magnetic primary CTAs (fine-pointer devices only) ----
+      if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+        gsap.utils.toArray('.gb-lp-btn-primary').forEach(function (btn) {
+          var xTo = gsap.quickTo(btn, "x", { duration: .4, ease: "power3" });
+          var yTo = gsap.quickTo(btn, "y", { duration: .4, ease: "power3" });
+          btn.addEventListener('mousemove', function (e) {
+            var r = btn.getBoundingClientRect();
+            xTo((e.clientX - (r.left + r.width / 2)) * .3);
+            yTo((e.clientY - (r.top + r.height / 2)) * .45);
+          });
+          btn.addEventListener('mouseleave', function () { xTo(0); yTo(0); });
+        });
+      }
+
+      if (!hasST) return;
+
+      // ---- Generic scroll reveals ----
+      gsap.utils.toArray('[data-anim="up"]').forEach(function (el) {
+        gsap.from(el, {
+          y: 56, opacity: 0, duration: .95, ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 88%" }
+        });
+      });
+      gsap.utils.toArray('[data-anim="card"]').forEach(function (el, i) {
+        gsap.from(el, {
+          y: 68, opacity: 0, scale: .98, duration: .9, ease: "power3.out", delay: i * 0.1,
+          scrollTrigger: { trigger: el, start: "top 88%" }
+        });
+      });
+
+      // ---- Drifting background arrow fields ----
+      gsap.utils.toArray('.gb-lp-floaters').forEach(function (field) {
+        var arr = field.querySelectorAll('.gb-lp-fa');
+        gsap.to(arr, { y: "+=30", x: "+=14", rotation: 6, duration: 4.5, ease: "sine.inOut", yoyo: true, repeat: -1, stagger: { each: .6, from: "random" } });
+        gsap.to(field, {
+          yPercent: -24, ease: "none",
+          scrollTrigger: { trigger: field.parentNode, start: "top bottom", end: "bottom top", scrub: true }
+        });
+      });
+
+      // ---- Stat count-ups ----
+      gsap.utils.toArray('.gb-lp-count').forEach(function (el) {
+        var to = parseInt(el.getAttribute('data-to'), 10) || 0;
+        var obj = { v: 0 };
+        ScrollTrigger.create({
+          trigger: el, start: "top 92%", once: true, onEnter: function () {
+            gsap.to(obj, {
+              v: to, duration: 1.4, ease: "power2.out",
+              onUpdate: function () { el.textContent = Math.round(obj.v); }
+            });
+          }
+        });
+      });
+
+      // ---- The "shift" beat: reveal + connector bar fills DIGITAL -> AGENTIC ----
+      gsap.utils.toArray('.gb-lp-beat [data-anim="beat"]').forEach(function (el) {
+        gsap.from(el, {
+          y: 42, opacity: 0, duration: .9, ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 86%" }
+        });
+      });
+      gsap.fromTo('.gb-lp-beat-rail .gb-lp-fill', { scaleX: 0 },
+        {
+          scaleX: 1, ease: "none",
+          scrollTrigger: { trigger: '.gb-lp-beat', start: "top 72%", end: "bottom 72%", scrub: .6 }
+        });
+
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function () { ScrollTrigger.refresh(); }); }
+      ScrollTrigger.refresh();
+    })();
+  </script>
+
+  <!-- MODAL : thank-you popup -->
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="thanks">
+      <div class="thanks__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="32" fill="#BFD732" />
+          <polyline points="18,33 27,42 46,23" fill="none" stroke="#00292E" stroke-width="4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+      <h2 class="thanks__title">Thank you, we've got it</h2>
+      <p class="thanks__subtitle">A senior member of our GCC financial services team will be in touch with you shortly
+      </p>
+      <a href="#" class="thanks__close--btn" id="close-btn">Close</a>
+    </div>
+  </div>
+
+  <!-- Pardot iframe + modal logic -->
+  <script>
+    (function () {
+      var pardotFormUrl = 'https://mkt.globant.com/l/497451/2026-06-22/73535b'
+      var MIN_SUBMISSION_DELAY = 5000
+      var formReadyAt = 0
+
+      var iframe = document.getElementById('pardot-iframe')
+      var modal = document.getElementById('modal')
+      var modalOverlay = document.getElementById('modal-overlay')
+      var closeBtn = document.getElementById('close-btn')
+
+      iframe.src = pardotFormUrl
+
+      function openModal() {
+        modal.classList.add('is-visible')
+        modalOverlay.classList.add('is-visible')
+        document.body.style.overflow = 'hidden'
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-visible')
+        modalOverlay.classList.remove('is-visible')
+        document.body.style.overflow = ''
+        resetIframe()
+      }
+
+      function resetIframe() {
+        formReadyAt = 0
+        var newIframe = document.createElement('iframe')
+        newIframe.id = 'pardot-iframe'
+        newIframe.src = pardotFormUrl
+        newIframe.setAttribute('scrolling', 'no')
+        newIframe.style.cssText = 'border:none;border-radius:12px;display:block;height:550px;opacity:0;transition:opacity 0.3s ease;width:100%'
+        newIframe.addEventListener('load', handleIframeLoad)
+        iframe.parentNode.replaceChild(newIframe, iframe)
+        iframe = newIframe
+      }
+
+      function handleIframeLoad() {
+        iframe.style.opacity = '1'
+      }
+
+      iframe.addEventListener('load', handleIframeLoad)
+
+      var initialFormHeight = 0
+      var pendingSubmissionCheck = false
+      var pendingFallbackTimer = null
+
+      window.addEventListener('message', function (event) {
+        var data = event.data
+
+        if (typeof data === 'string' && /^\d+(\.\d+)?px$/.test(data)) {
+          var height = parseFloat(data)
+          if (initialFormHeight === 0 && height > 100) {
+            initialFormHeight = height
+          } else if (pendingSubmissionCheck) {
+            pendingSubmissionCheck = false
+            clearTimeout(pendingFallbackTimer)
+            if (height < initialFormHeight * 0.6) {
+              openModal()
+            }
+          }
+          return
+        }
+
+        if (data === 'formSubmitted') {
+          openModal()
+          return
+        }
+
+        if (data !== 'pardot OK') return
+
+        if (formReadyAt === 0) {
+          formReadyAt = Date.now()
+        } else if (Date.now() - formReadyAt >= MIN_SUBMISSION_DELAY) {
+          pendingSubmissionCheck = true
+          pendingFallbackTimer = setTimeout(function () {
+            if (pendingSubmissionCheck) {
+              pendingSubmissionCheck = false
+              openModal()
+            }
+          }, 2000)
+        }
+      })
+
+      closeBtn.addEventListener('click', function (event) {
+        event.preventDefault()
+        closeModal()
+      })
+
+      modalOverlay.addEventListener('click', function () {
+        closeModal()
+      })
+    })();
+  </script>
+
+  <!-- UTM / attribution passthrough to Pardot iframe -->
+  <script>
+    (function () {
+      var MAP = {
+        'utm_source': 'utm_source', 'utm_medium': 'utm_medium',
+        'utm_campaign': 'utm_campaign', 'utm_term': 'utm_term', 'utm_content': 'utm_content',
+        'gclid': 'gclid_field', 'msclkid': 'MSCLID', 'dclid': 'DCLID',
+        'fbclid': 'FBclid', 'li_fat_id': 'li_fat_id'
+      };
+      var STORE = 'gb_attribution';
+      var IFRAME_ID = 'pardot-iframe';
+      var HANDSHAKE = 'pardot OK';
+      var COOKIE_DAYS = 30;
+      var ALLOWED_CHILD_ORIGIN = '';
+
+      function setCookie(name, value) {
+        document.cookie = name + '=' + encodeURIComponent(value) +
+          ';path=/;max-age=' + (60 * 60 * 24 * COOKIE_DAYS) + ';SameSite=Lax';
+      }
+      function getCookie(name) {
+        var m = document.cookie.match(
+          new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\\/+^])/g, '\\$1') + '=([^;]*)')
+        );
+        return m ? decodeURIComponent(m[1]) : null;
+      }
+
+      var saved = {};
+      try {
+        var fromCookie = getCookie(STORE);
+        if (fromCookie) saved = JSON.parse(fromCookie);
+      } catch (e) { }
+      if (!Object.keys(saved).length) {
+        try { saved = JSON.parse(sessionStorage.getItem(STORE)) || {}; } catch (e) { }
+      }
+
+      var url = new URLSearchParams(window.location.search);
+      var payload = {};
+      Object.keys(MAP).forEach(function (param) {
+        var cls = MAP[param];
+        var v = url.get(param);
+        if (v) payload[cls] = v;
+        else if (saved[cls]) payload[cls] = saved[cls];
+      });
+      payload['Page_Title'] = document.title;
+
+      try {
+        var json = JSON.stringify(payload);
+        setCookie(STORE, json);
+        sessionStorage.setItem(STORE, json);
+      } catch (e) { }
+
+      var qs = Object.keys(payload)
+        .filter(function (k) { return payload[k]; })
+        .map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(payload[k]); })
+        .join('&');
+
+      function postToIframe(win) {
+        if (!win) return;
+        try { win.postMessage(qs, '*'); } catch (e) { }
+      }
+
+      window.addEventListener('message', function (e) {
+        if (ALLOWED_CHILD_ORIGIN && e.origin !== ALLOWED_CHILD_ORIGIN) return;
+        if (e.data === HANDSHAKE && e.source) {
+          postToIframe(e.source);
+        }
+      });
+
+      var iframe = document.getElementById(IFRAME_ID);
+      if (iframe) {
+        function sendBurst() {
+          postToIframe(iframe.contentWindow);
+          var delays = [300, 800, 1500, 3000];
+          delays.forEach(function (d) {
+            setTimeout(function () { postToIframe(iframe.contentWindow); }, d);
+          });
+        }
+        iframe.addEventListener('load', sendBurst);
+        try {
+          if (iframe.contentWindow &&
+            iframe.contentDocument &&
+            iframe.contentDocument.readyState === 'complete') {
+            sendBurst();
+          }
+        } catch (e) {
+          sendBurst();
+        }
+      }
+    })();
+  </script>
+</body>
+
+</html>
